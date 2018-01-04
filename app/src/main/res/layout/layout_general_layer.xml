@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <!--<variable-->
+            <!--name="layer"-->
+            <!--type="com.lltvcn.freefont.core.datas.LayerData" />-->
+
+        <variable
+            name="drawdata"
+            type="com.lltvcn.freefont.core.data.DrawData"/>
+    </data>
+
+
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.lltvcn.freefont.core.view.STextView
+                android:id="@+id/tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:layerType="software"
+                android:textSize="25sp"
+                android:onClick="clickTxt"
+                android:text="测试文字"
+                />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/et_txt_size"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:gravity="center"
+                    android:onClick="clickTxt"
+                    android:hint="默认字号(像素)"
+                    />
+
+                <TextView
+                    android:id="@+id/et_txt_color"
+                    android:layout_weight="1"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:onClick="clickTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:hint="默认颜色(ffffff)"/>
+
+
+                <TextView
+                    android:id="@+id/et_txt_font"
+                    android:layout_weight="0.8"
+                    android:onClick="clickTxt"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:hint="默认字体"/>
+
+                <TextView
+                    android:id="@+id/et_font_style"
+                    android:layout_weight="1"
+                    android:onClick="clickTxt"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:hint="字体风格"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_width"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:gravity="center"
+                    android:onClick="clickTxt"
+                    android:hint="每个字宽度"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_height"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:gravity="center"
+                    android:text="@{String.valueOf(drawdata.height)}"
+                    android:onClick="clickTxt"
+                    android:hint="每个字高度"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_bg"
+                    android:onClick="clickTxt"
+                    android:padding="10dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="背景"/>
+
+
+            </LinearLayout>
+
+            <GridView
+                android:id="@+id/gv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:numColumns="4"></GridView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_add_img_layer"
+                    android:text="添加图片层"
+                    android:onClick="clickBtn"
+                    android:enabled="true"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <Button
+                    android:id="@+id/btn_add_txt_layer"
+                    android:text="添加文字层"
+                    android:onClick="clickBtn"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:elevation="0dp" />
+
+                <Button
+                    android:id="@+id/btn_comp_layer"
+                    android:text="合并图层"
+                    android:onClick="clickBtn"
+                    android:enabled="false"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:elevation="0dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_add_fore_img"
+                    android:text="添加行前景图"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:onClick="clickBtn"
+                    android:elevation="0dp" />
+
+                <Button
+                    android:id="@+id/btn_add_bg_img"
+                    android:text="添加行背景图"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:onClick="clickBtn"
+                    android:elevation="0dp" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="onCK"
+                    android:layout_weight="1"
+                    android:id="@+id/ck_shader_main_linear"
+                    android:text="线性渐变"/>
+
+                <CheckBox
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="onCK"
+                    android:layout_weight="1"
+                    android:id="@+id/ck_shader_main_radius"
+                    android:text="圆型渐变"/>
+
+                <CheckBox
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="onCK"
+                    android:layout_weight="1"
+                    android:id="@+id/ck_shader_main_sweep"
+                    android:text="扇形渐变"/>
+
+                <CheckBox
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="onCK"
+                    android:layout_weight="1"
+                    android:id="@+id/ck_shader_main_bm"
+                    android:text="图片"/>
+
+            </LinearLayout>
+
+
+
+
+
+            <Button
+                android:id="@+id/btn_general_module"
+                android:text="生成模版"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:onClick="clickBtn"
+                android:elevation="0dp" />
+
+        </LinearLayout>
+
+
+
+
+
+        <FrameLayout
+            android:id="@+id/fl_cotainer"
+            android:background="#ba000000"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></FrameLayout>
+
+
+    </FrameLayout>
+</layout>

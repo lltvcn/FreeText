@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/view_addLayer"
+    android:orientation="vertical"
+    android:elevation="15dp"
+    android:layout_gravity="bottom"
+    android:gravity="bottom"
+    android:background="@android:color/white"
+    android:translationZ="15dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+
+
+    <TextView
+        android:id="@+id/et_layer_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:layout_weight="1"
+        android:paddingBottom="10dp"
+        android:onClick="clickTxt"
+        android:gravity="center"
+
+        android:hint="图层名称"/>
+
+    <LinearLayout
+        android:id="@+id/ll_img"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/ck_imgs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:layout_weight="1"
+            android:paddingBottom="10dp"
+            android:onClick="onCK"
+            android:gravity="center"
+            android:hint="选择图片"/>
+
+        <CheckBox
+            android:id="@+id/ck_colors"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:layout_weight="1"
+            android:paddingBottom="10dp"
+            android:onClick="onCK"
+            android:gravity="center"
+            android:hint="选择颜色"/>
+
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:id="@+id/ll_txt"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/et_layer_txt_size"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:onClick="clickTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="相对字号"/>
+
+        <TextView
+            android:id="@+id/et_layer_txt_color"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:onClick="clickTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="字体颜色"/>
+
+
+
+        <TextView
+            android:id="@+id/et_layer_font"
+            android:layout_weight="0.8"
+            android:gravity="center"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:onClick="clickTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:hint="字体"/>
+
+        <TextView
+            android:id="@+id/et_layer_txt_font_style"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:onClick="clickTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:hint="字体风格"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/et_offset_x"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:onClick="clickTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="水平偏移量"/>
+
+        <TextView
+            android:id="@+id/et_offset_y"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:onClick="clickTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="竖直偏移量"/>
+
+        <TextView
+            android:id="@+id/et_rotate"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:onClick="clickTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="旋转角度"/>
+
+        <TextView
+            android:id="@+id/et_scale"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:onClick="clickTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="缩放(0~1)"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--<TextView-->
+            <!--android:id="@+id/et_clip"-->
+            <!--android:layout_weight="1"-->
+            <!--android:gravity="center"-->
+            <!--android:paddingTop="10dp"-->
+            <!--android:paddingBottom="10dp"-->
+            <!--android:onClick="clickTxt"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:hint="上下切割"/>-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/et_offset"-->
+            <!--android:layout_weight="1"-->
+            <!--android:gravity="center"-->
+            <!--android:paddingTop="10dp"-->
+            <!--android:paddingBottom="10dp"-->
+            <!--android:onClick="clickTxt"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:hint="抖音效果"/>-->
+
+
+    </LinearLayout>
+
+
+
+
+
+
+
+    <!--<LinearLayout-->
+    <!--android:id="@+id/ll_shadow"-->
+    <!--android:orientation="horizontal"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent">-->
+
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <CheckBox
+            android:id="@+id/ck_stoke"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onCK"
+            android:text="描边"/>
+
+        <CheckBox
+            android:id="@+id/ck_shadow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onCK"
+            android:text="阴影"/>
+
+        <CheckBox
+            android:id="@+id/ck_blur"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:onClick="onCK"
+            android:text="模糊"/>
+
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <CheckBox
+            android:id="@+id/ck_clip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onCK"
+            android:enabled="true"
+            android:text="切割"/>
+
+        <CheckBox
+            android:id="@+id/ck_offset"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onCK"
+            android:enabled="true"
+            android:text="抖音"/>
+
+        <CheckBox
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onCK"
+            android:layout_weight="1"
+            android:id="@+id/ck_color_index"
+            android:text="多颜色变化"/>
+    </LinearLayout>
+
+
+    <!--</LinearLayout>-->
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <CheckBox
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="线性渐变"
+            android:onClick="onCK"
+            android:id="@+id/ck_shader_lin" />
+
+        <CheckBox
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onCK"
+            android:id="@+id/ck_shader_rad"
+            android:text="圆形渐变"/>
+
+        <CheckBox
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onCK"
+            android:id="@+id/ck_shader_swee"
+            android:text="扇形渐变"/>
+
+        <CheckBox
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onCK"
+            android:id="@+id/ck_shader_bm"
+            android:text="图片叠加"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/btn_layer_cancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="关闭"/>
+
+        <Button
+            android:id="@+id/btn_layer_delete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="删除"/>
+
+
+        <Button
+            android:id="@+id/btn_layer_separate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="分离"/>
+
+        <Button
+            android:id="@+id/btn_layer_ok"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="添加"/>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

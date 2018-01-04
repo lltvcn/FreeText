@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffffff">
+
+    <EditText
+        android:id="@+id/et_edit"
+        android:layout_width="match_parent"
+        android:layout_marginTop="30dp"
+        android:hint="请输入内容"
+        android:padding="20dp"
+        android:layout_height="wrap_content"
+        android:textSize="13sp"/>
+
+    <Button
+        android:id="@+id/btn_et_confirm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="确定"/>
+
+    <Button
+        android:id="@+id/btn_et_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
+        android:text="取消"/>
+
+
+</LinearLayout>

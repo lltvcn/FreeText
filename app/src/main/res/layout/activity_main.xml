@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    tools:context="drawn.lltvcn.com.textdemo.MainActivity">
+
+
+
+
+
+
+    <com.lltvcn.freefont.core.view.ShadeTextView
+        android:id="@+id/tv"
+        android:layout_centerHorizontal="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_red_light"
+        android:singleLine="true"
+        android:gravity="center"
+        android:textStyle="italic"
+        android:visibility="visible"
+        android:layerType="software"
+        android:textSize="80sp"/>
+
+    <GridView
+        android:id="@+id/gridview"
+        android:padding="2dp"
+        android:layout_below="@id/tv"
+        android:numColumns="4"
+        android:horizontalSpacing="2dp"
+        android:verticalSpacing="2dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></GridView>
+
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></FrameLayout>
+
+    <ImageView
+        android:id="@+id/iv"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:scaleType="center"
+        android:src="@drawable/jjj"/>
+
+
+</RelativeLayout>

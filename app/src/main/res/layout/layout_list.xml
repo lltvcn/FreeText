@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:text="创建字体模版"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="toEdit" />
+
+    <Button
+        android:text="预览字体模版"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="toReview" />
+
+    <Button
+        android:text="预览动画效果"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="toReviewAni" />
+
+    <Button
+        android:text="code"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="toCode" />
+
+
+</LinearLayout>
