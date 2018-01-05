@@ -22,6 +22,8 @@ import java.util.ArrayList;
 import drawn.lltvcn.com.textdemo.controller.EditParamViewController;
 import drawn.lltvcn.com.textdemo.controller.SelectController;
 import drawn.lltvcn.com.util.FileUtil;
+import drawn.lltvcn.com.util.FontUtil;
+import drawn.lltvcn.com.util.SUtil;
 
 /**
  * Created by zhaolei on 2017/11/21.
@@ -30,7 +32,7 @@ import drawn.lltvcn.com.util.FileUtil;
 public class ReviewAniActivity extends Activity{
     STextView tv;
     SelectController selectController;
-    String[] fileNames,aniNames;
+    String[] fileNames,aniNames,fontNames;
     DrawData drawData;
     int[] aniTypes;
 
@@ -44,7 +46,9 @@ public class ReviewAniActivity extends Activity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_review_ani);
         tv = (STextView) findViewById(R.id.tv);
-        tv.setText("测试字体");
+        fontNames = FontUtil.getFontNames();
+        tv.setLocalSourcePath(FileUtil.getImgDir());
+        tv.setText(SUtil.getTxt());
         selectController = new SelectController();
         selectController.init((ViewGroup) findViewById(R.id.fl_cotainer), new EditParamViewController.VisiableListener() {
             @Override
@@ -98,6 +102,22 @@ public class ReviewAniActivity extends Activity{
                                     }
                                 }
                             }
+                        }
+                    }
+                });
+            }
+        });
+
+        findViewById(R.id.btn_font).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selectController.show(fontNames, false, new SelectController.ResultListener() {
+                    @Override
+                    public void onConfrim(ArrayList<String> result) {
+                        if(result!=null&&result.size()>0){
+                            tv.setTypeface(FontUtil.getTypeface(result.get(0)));
+                        }else{
+                            tv.setTypeface(null);
                         }
                     }
                 });

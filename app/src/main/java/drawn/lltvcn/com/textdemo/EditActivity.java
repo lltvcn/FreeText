@@ -448,7 +448,7 @@ public class EditActivity extends Activity{
                             e.printStackTrace();
                         }
                         if(fontData.dependImgs!=null&&fontData.dependImgs.size()>0){
-                            File imgDir = new File(dir.getAbsolutePath()+File.separator+"temp");
+                            File imgDir = new File(dir.getAbsolutePath()+File.separator+"res");
                             imgDir.mkdir();
                             for (Map.Entry<String,String> entry: fontData.dependImgs.entrySet()) {
                                 FileUtil.copyFile(new File(entry.getValue()),new File(imgDir.getAbsolutePath()+File.separator+entry.getKey()));

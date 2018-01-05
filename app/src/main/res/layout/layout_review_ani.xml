@@ -9,14 +9,13 @@
         android:id="@+id/tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@android:color/black"
         android:layerType="software"
         android:gravity="center"
         android:text="测试文字"
         android:textSize="30sp"/>
 
     <Button
-        android:text="选择字体"
+        android:text="选择特效"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/btn_add" />
@@ -26,6 +25,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/btn_ani" />
+
+    <Button
+        android:text="选择字体"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_font" />
 
 
     <FrameLayout

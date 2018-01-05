@@ -22,6 +22,8 @@ import java.util.ArrayList;
 import drawn.lltvcn.com.textdemo.controller.EditParamViewController;
 import drawn.lltvcn.com.textdemo.controller.SelectController;
 import drawn.lltvcn.com.util.FileUtil;
+import drawn.lltvcn.com.util.FontUtil;
+import drawn.lltvcn.com.util.SUtil;
 
 /**
  * Created by zhaolei on 2017/11/21.
@@ -31,13 +33,16 @@ public class ReviewActivity extends Activity{
     STextView tv;
     SelectController selectController;
     String[] fileNames;
+    String[] fontNames;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_review);
+        fontNames = FontUtil.getFontNames();
         tv = (STextView) findViewById(R.id.tv);
-        tv.setText("测试字体");
+        tv.setText(SUtil.getTxt());
+        tv.setLocalSourcePath(FileUtil.getImgDir());
         selectController = new SelectController();
         selectController.init((ViewGroup) findViewById(R.id.fl_cotainer), new EditParamViewController.VisiableListener() {
             @Override
@@ -66,6 +71,21 @@ public class ReviewActivity extends Activity{
                             e.printStackTrace();
                         } catch (IOException e) {
                             e.printStackTrace();
+                        }
+                    }
+                });
+            }
+        });
+        findViewById(R.id.btn_font).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selectController.show(fontNames, false, new SelectController.ResultListener() {
+                    @Override
+                    public void onConfrim(ArrayList<String> result) {
+                        if(result!=null&&result.size()>0){
+                            tv.setTypeface(FontUtil.getTypeface(result.get(0)));
+                        }else{
+                            tv.setTypeface(null);
                         }
                     }
                 });

@@ -67,7 +67,7 @@ public class FileUtil {
         return getRootPath()+FONT_PATH;
     }
 
-    private static String getRootPath(){
+    public static String getRootPath(){
         return getRootPath(ROOT_PATH,false,false);
     }
 
