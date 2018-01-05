@@ -27,6 +27,8 @@ public class ListActivity extends Activity{
         startActivity(new Intent(this,ReviewActivity.class));
     }
 
+    public void toDemo(View view) {startActivity(new Intent(this,DemoActivity.class));}
+
     public void toReviewAni(View view){
         startActivity(new Intent(this,ReviewAniActivity.class));
 

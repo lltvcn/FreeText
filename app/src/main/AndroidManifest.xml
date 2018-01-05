@@ -46,6 +46,12 @@
             android:windowSoftInputMode="adjustPan|stateAlwaysHidden"
             >
         </activity>
+
+        <activity android:name=".DemoActivity"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden"
+            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen"
+            >
+        </activity>
     </application>
 
 

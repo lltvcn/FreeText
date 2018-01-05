@@ -2,12 +2,16 @@ package drawn.lltvcn.com.util;
 
 import android.os.Environment;
 
+import com.google.gson.Gson;
+import com.lltvcn.freefont.core.data.DrawData;
+
 import java.io.BufferedReader;
 import java.io.Closeable;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -454,5 +458,17 @@ public class FileUtil {
 //        return getImgDir()+File.separator+getNameByMd5(md5);
 //    }
 
+    public static DrawData getDrawData(String name){
+        String dir = getDataDirByName(name);
+        try {
+            FileReader reader = new FileReader(dir + File.separator + name + ".txt");
+            DrawData data = new Gson().fromJson(reader, DrawData.class);
+            reader.close();
+            return data;
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return null;
+    }
 
 }

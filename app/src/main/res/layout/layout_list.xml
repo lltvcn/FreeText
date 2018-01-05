@@ -22,6 +22,12 @@
         android:onClick="toReviewAni" />
 
     <Button
+        android:text="Demo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="toDemo" />
+
+    <Button
         android:text="code"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
